@@ -22,9 +22,3 @@ def handle_stats_get():
     stats = get_stats()
   
     return jsonify(stats), 200
-
-@api.get("/dna/<hash>")
-def handle_get_dna(hash):
-    dna = get_dna(hash)
-
-    return dna, 200
