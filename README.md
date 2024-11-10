@@ -36,16 +36,17 @@ It exposes two HTTP endpoints:
 ## Setting up the database
 A Supabase db (PostgreSQL) is needed to store the analysed DNAs.
 
-- Inside the database console:
-
-      Create the table by running ` CREATE TABLE dna(dna_hash TEXT PRIMARY KEY, dna JSONB UNIQUE, is_mutant BOOL);`
-      Create an index for `is_mutant` field by running `CREATE INDEX ON dna(is_mutant);`
-
 See `.env.example` and create an `.env` file at the root of this project with Supabase credentials.
+
+### Inside the Supabase console:
+
+Create the table by running ` CREATE TABLE dna(dna_hash TEXT PRIMARY KEY, dna JSONB UNIQUE, is_mutant BOOL);`
+
+Create an index for `is_mutant` field by running `CREATE INDEX ON dna(is_mutant);`
 
 
 ## Running the API
-Run these commands in the following in order at the root of this repository
+Run these commands in the following order at the root of this repository
 
 `python -m venv .venv`
 
@@ -53,6 +54,6 @@ Run these commands in the following in order at the root of this repository
 
 `pip install -r requirements.txt`
 
-`flask run`
+`flask run -h localhost -p 3008`
 
-In the console you'll see the API's url to make requests to.
+Now you can send requests to the API running on http://localhost:3008
