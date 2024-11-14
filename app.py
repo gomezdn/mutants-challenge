@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from utils.mutant import is_mutant
-from repository.mutant import get_stats, upsert_dna, get_dna
+from repository.mutant import get_stats, upsert_dna
 
 
 api = Flask(__name__)

@@ -24,8 +24,3 @@ def upsert_dna(dna, mutant):
     }).execute()
 
   return response
-
-def get_dna(dna_hash):
-  response = dna_table.select("dna", "is_mutant").eq("dna_hash", dna_hash).execute()
-
-  return response.data[0]
