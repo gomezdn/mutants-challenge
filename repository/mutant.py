@@ -9,7 +9,7 @@ def get_stats():
   return {
     "count_mutant_dna": mutants,
     "count_human_dna": humans,
-    "ratio": round(ratio, 2)
+    "ratio": round(ratio, 2) if mutants > 0 and humans > 0 else "Either insufficient mutants or humans to calculate."
   }
 
 def upsert_dna(dna, mutant):
