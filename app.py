@@ -10,7 +10,7 @@ def handle_mutant_post():
     dna = request.json["dna"]
     is_human = not is_mutant(dna)
 
-    upsert_dna(dna, is_human)
+    upsert_dna(dna, not is_human)
 
     if (is_human):
         return jsonify(False), 403
